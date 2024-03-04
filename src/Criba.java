@@ -23,7 +23,7 @@ public class Criba {
      * @param max En este caso max es la variable que define la longitud del array.
      * @return Devuelve el array con los booleanos definidos.
      */
-    private static boolean[] inicializarPrimos(int max) {
+    public static boolean[] inicializarPrimos(int max) {
         boolean[] esPrimo = new boolean[max + 1];
         for (int i = 2; i < esPrimo.length; i++) {
             esPrimo[i] = true;
@@ -36,7 +36,7 @@ public class Criba {
      * Marca como no primos los múltiplos de los números primos encontrados.
      * @param max Define la longitud de la tabla.
      */
-    private static void cribarMultiplos(int max, boolean[] esPrimo) {
+    public static void cribarMultiplos(int max, boolean[] esPrimo) {
         for (int i = 2; i * i <= max; i++) {
             if (esPrimo[i]) {
                 for (int j = i * i; j <= max; j += i) {
@@ -51,7 +51,7 @@ public class Criba {
      * @param max Longitud maxima de la tabla.
      * @return Un array que contiene los numeros que son primos.
      */
-    private static int[] obtenerPrimos(int max, boolean[] esPrimo) {
+    public static int[] obtenerPrimos(int max, boolean[] esPrimo) {
         int cuenta = contarPrimos(max, esPrimo);
         int[] primos = new int[cuenta];
         for (int i = 0, j = 0; i < esPrimo.length; i++) {
@@ -66,7 +66,7 @@ public class Criba {
      * Cuenta cuantos numeros primos tenemos.
      * @return La cantidad de números primos encontrados.
      */
-    private static int contarPrimos(int max, boolean[] esPrimo) {
+    public static int contarPrimos(int max, boolean[] esPrimo) {
         int cuenta = 0;
         for (boolean primo : esPrimo) {
             if (primo) {
